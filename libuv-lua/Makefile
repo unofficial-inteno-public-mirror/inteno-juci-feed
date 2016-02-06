@@ -8,6 +8,7 @@ PKG_VERSION:=4602b7a57576cdd3f6e05fabc79d2a422f1d49e3
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+#PKG_SOURCE_URL:=https://github.com/luvit/luv.git
 PKG_SOURCE_URL:=https://github.com/mkschreder/luv.git
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=$(PKG_VERSION)
