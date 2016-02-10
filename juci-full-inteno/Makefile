@@ -40,6 +40,7 @@ define Package/juci-full-inteno
 	  +juci-natalie-dect \
 	  +juci-netmode \
 	  +juci-network-netifd \
+	  +juci-printer \
 	  +juci-samba \
 	  +juci-snmpd \
 	  +juci-sysupgrade \

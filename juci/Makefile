@@ -5,7 +5,7 @@ PKG_NAME:=juci
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=git@iopsys.inteno.se:inteno-juci.git
-PKG_SOURCE_VERSION:=12fb13703bb380ff16d1268f803801b347853b3d
+PKG_SOURCE_VERSION:=fac2e725dfc68716b7ee578244d98ab55034ec5e
 PKG_VERSION:=2016-02-06
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_SOURCE_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_SOURCE_VERSION).tar.gz
@@ -130,6 +130,7 @@ $(eval $(call RegisterAddon,Plugins,juci-mod-status, Deprecated JUCI Status Repo
 $(eval $(call RegisterAddon,Plugins,juci-mod-system, JUCI System Administration Module))
 $(eval $(call RegisterAddon,Plugins,juci-netmode, Inteno NetMode default reset functionality))
 $(eval $(call RegisterAddon,Plugins,juci-network-netifd, OpenWRT netifd network configuration module))
+$(eval $(call RegisterAddon,Plugins,juci-printer, Inteno printer configuration page))
 $(eval $(call RegisterAddon,Plugins,juci-router-openwrt, OpenWRT Router Interface))
 $(eval $(call RegisterAddon,Plugins,juci-samba, Samba36 Configuration))
 $(eval $(call RegisterAddon,Plugins,juci-sysupgrade, Inteno Sysupgrade Firmware Upgrade))
