@@ -1,5 +1,12 @@
 #!/bin/sh
 
+local hasAdsl=$(db -q get hw.board.hasAdsl)
+local hasVdsl=$(db -q get hw.board.hasVdsl)
+local hasVoice=$(db -q get hw.board.hasVoice)
+local hasDect=$(db -q get hw.board.hasDect)
+
+[ $hasVoice == 1 ] || hasVoice=$hasDect
+
 install_event_config(){
 	cat >> /etc/config/juci << EOF
 config juci_event 'juci_event'
@@ -142,12 +149,12 @@ EOF
 # install the default menus if they are not already in the config
 uci -q get juci.@menu[0] || {
 	install_event_config
-	db -q get hw.board.hasVoice && install_voice_pages
-	db -q get hw.board.hasDect && install_dect_pages
+	[ $hasVoice == 1 ] && install_voice_pages
+	[ $hasDect == 1 ] && install_dect_pages
 	install_ethernet_pages
 	
-	db -q get hw.board.hasAdsl && install_adsl_pages
-	db -q get hw.board.hasVdsl && install_vdsl_pages
+	[ $hasAdsl == 1 ] && install_adsl_pages
+	[ $hasVdsl == 1 ] && install_vdsl_pages
 
 	cat >> /etc/config/juci << EOF
 config menu
@@ -469,7 +476,7 @@ config menu
 	option page 'status-diagnostics'
 	list acls 'juci-diagnostics'
 EOF
-	db -q get hw.board.hasVoice && {
+	[ $hasVoice == 1 ] && {
 		cat >> /etc/config/juci << EOF
 config menu
 	option path 'status/phone'
@@ -491,7 +498,7 @@ EOF
 
 # install the default menus if they are not already in the config
 ubus call uci delete '{"config":"rpcd","type":"login"}'
-ubus call uci commit 
+ubus call uci commit '{"config":"rpcd"}'
 
 cat >> /etc/config/rpcd << EOF
 config login
@@ -625,6 +632,6 @@ config login
 	list write 'core'
 	list write 'unauthenticated'
 EOF
-/etc/init.d/rpcd restart
+/etc/init.d/rpcd reload
 
 exit 0
