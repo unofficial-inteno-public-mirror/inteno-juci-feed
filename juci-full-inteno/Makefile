@@ -28,6 +28,7 @@ define Package/juci-full-inteno
 	  +juci-event \
 	  +juci-firewall-fw3 \
 	  +juci-simple-gui \
+	  +juci-icwmp \
 	  +juci-iconnect \
 	  +juci-inteno-multiwan \
 	  +juci-inteno-router \

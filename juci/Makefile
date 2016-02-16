@@ -114,6 +114,7 @@ $(eval $(call RegisterAddon,Plugins,juci-dnsmasq-dhcp, DHCP/DNSMasq configuratio
 $(eval $(call RegisterAddon,Plugins,juci-dropbear, Dropbear Configuration,dropbear))
 $(eval $(call RegisterAddon,Plugins,juci-event, JUCI Event Subsystem ))
 $(eval $(call RegisterAddon,Plugins,juci-firewall-fw3, FW3 Firewall Configuration /etc/config/firewall ))
+$(eval $(call RegisterAddon,Plugins,juci-icwmp, Configure TR69 settings /etc/config/icwmp ))
 $(eval $(call RegisterAddon,Plugins,juci-iconnect,JUCI UBUS interconnect private cloud interface))
 $(eval $(call RegisterAddon,Plugins,juci-igmpinfo, IGMP Snooping Info through kernel snooping tables ))
 $(eval $(call RegisterAddon,Plugins,juci-inteno-backup,Inteno Backup Module))
