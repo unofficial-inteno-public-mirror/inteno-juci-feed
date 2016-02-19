@@ -476,6 +476,7 @@ config menu
 	option page 'status-diagnostics'
 	list acls 'juci-diagnostics'
 EOF
+}
 	[ $hasVoice == 1 ] && {
 		cat >> /etc/config/juci << EOF
 config menu
@@ -494,7 +495,6 @@ config menu
 	option path 'status/restart'
 	option page 'status-restart'
 EOF
-}
 
 # install the default menus if they are not already in the config
 ubus call uci delete '{"config":"rpcd","type":"login"}'

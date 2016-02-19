@@ -20,6 +20,7 @@ define Package/juci-full-inteno
 	  +juci-broadcom-iptv \
 	  +juci-broadcom-vlan \
 	  +juci-broadcom-wl \
+	  +juci-broadcom-pwrmgmt \
 	  +juci-ddns \
 	  +juci-diagnostics \
 	  +juci-dnsmasq-dhcp \
