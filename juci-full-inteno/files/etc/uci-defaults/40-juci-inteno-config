@@ -43,6 +43,12 @@ config menu
 	list acls 'user-support'
 
 config menu
+	option path 'voice/sip-users'
+	option page 'voice-sip-users'
+	list acls 'juci-inteno-voice-client'
+	list acls 'user-support'
+
+config menu
 	option path 'voice/lines'
 	option page 'voice-lines'
 	list acls 'juci-inteno-voice-client'
